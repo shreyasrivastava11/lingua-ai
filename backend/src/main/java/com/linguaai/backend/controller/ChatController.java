@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 @CrossOrigin(origins = {
     "http://localhost:5173",
-    "http://localhost:5174"
+    "http://localhost:5174",
+    "https://lingua-ai-tau-three.vercel.app"
 })
 public class ChatController {
 
