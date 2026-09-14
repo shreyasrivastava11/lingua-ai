@@ -1,0 +1,743 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #EFF1F3;
+  color: #223843;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+  min-height: 100vh;
+  background: #EFF1F3;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.chat-header {
+  height: 72px;
+  background: #ffffff;
+  border-bottom: 1px solid #DBD3D8;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo span {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #223843;
+  color: #7C90A0;
+
+  border-radius: 9px;
+
+  font-size: 18px;
+}
+
+.logo h1 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #223843;
+}
+
+.new-chat {
+  background: #223843;
+  color: white;
+
+  border: none;
+  border-radius: 9px;
+
+  padding: 10px 16px;
+
+  font-size: 14px;
+}
+
+.new-chat:hover {
+  background: #2f4a58;
+}
+
+
+/* =========================
+   APP BODY
+========================= */
+
+.app-body {
+  display: flex;
+  height: calc(100vh - 72px);
+}
+
+
+/* =========================
+   LANGUAGE PANEL
+========================= */
+
+.language-panel {
+  width: 250px;
+  flex-shrink: 0;
+
+  background: #223843;
+  color: white;
+
+  padding: 30px 18px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================
+   AI CORE
+========================= */
+
+.ai-core {
+  text-align: center;
+  padding-bottom: 28px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.core-ring {
+  width: 82px;
+  height: 82px;
+
+  margin: 0 auto 14px;
+
+  border: 1px solid rgba(124, 144, 160, 0.5);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.core-ring::before {
+  content: "";
+
+  position: absolute;
+
+  width: 58px;
+  height: 58px;
+
+  border: 1px solid rgba(124, 144, 160, 0.25);
+  border-radius: 50%;
+}
+
+.core-ring span {
+  color: #7C90A0;
+  font-size: 27px;
+
+  z-index: 1;
+}
+
+.ai-core h2 {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.ai-core p {
+  color: #DBD3D8;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+
+/* =========================
+   LANGUAGE SECTION
+========================= */
+
+.language-section {
+  margin-top: 25px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding-right: 4px;
+}
+
+.language-section::-webkit-scrollbar {
+  width: 4px;
+}
+
+.language-section::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #DBD3D8;
+
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  margin-bottom: 12px;
+}
+
+
+/* =========================
+   LANGUAGE OPTIONS
+========================= */
+
+.language-option {
+  width: 100%;
+
+  border: none;
+  background: transparent;
+
+  color: #d1d5db;
+
+  padding: 10px 11px;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-align: left;
+
+  margin-bottom: 3px;
+
+  transition: 0.2s ease;
+}
+
+.language-option:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+}
+
+.language-option.active {
+  background: rgba(124, 144, 160, 0.18);
+  color: white;
+}
+
+.language-option strong {
+  display: block;
+  font-size: 13px;
+}
+
+.language-option div span {
+  display: block;
+
+  color: #a9b4bd;
+
+  font-size: 10px;
+
+  margin-top: 2px;
+}
+
+.active-dot {
+  width: 7px;
+  height: 7px;
+
+  background: #7C90A0;
+
+  border-radius: 50%;
+
+  box-shadow: 0 0 10px rgba(124, 144, 160, 0.7);
+}
+
+
+/* =========================
+   CURRENT MODE
+========================= */
+
+.current-mode {
+  margin-top: auto;
+
+  padding: 13px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  background: #7C90A0;
+
+  border-radius: 50%;
+}
+
+.current-mode strong {
+  display: block;
+  font-size: 11px;
+}
+
+.current-mode p {
+  color: #a9b4bd;
+  font-size: 9px;
+  margin-top: 3px;
+}
+
+
+/* =========================
+   CHAT AREA
+========================= */
+
+.chat-area {
+  flex: 1;
+
+  position: relative;
+
+  overflow-y: auto;
+
+  padding: 50px 60px 150px;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome {
+  min-height: 65vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.welcome-core {
+  width: 74px;
+  height: 74px;
+
+  border-radius: 50%;
+
+  background: #223843;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  box-shadow:
+    0 0 0 8px rgba(124, 144, 160, 0.08),
+    0 0 30px rgba(124, 144, 160, 0.15);
+}
+
+.welcome-core span {
+  color: #7C90A0;
+  font-size: 28px;
+}
+
+.welcome-label {
+  color: #5c7686;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+.welcome h2 {
+  font-size: 38px;
+  line-height: 1.15;
+
+  letter-spacing: -1.5px;
+  color: #223843;
+}
+
+.welcome h2 span {
+  color: #5c7686;
+}
+
+.welcome-description {
+  color: #6b7280;
+
+  max-width: 420px;
+
+  margin-top: 15px;
+
+  line-height: 1.6;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   MESSAGES
+========================= */
+
+.messages {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.message {
+  max-width: 75%;
+  margin-bottom: 22px;
+
+  padding: 14px 17px;
+
+  border-radius: 14px;
+
+  line-height: 1.6;
+
+  font-size: 14px;
+}
+
+.user-message {
+  margin-left: auto;
+
+  background: #223843;
+  color: white;
+
+  border-bottom-right-radius: 4px;
+}
+
+.ai-message {
+  margin-right: auto;
+
+  background: white;
+  color: #223843;
+
+  border: 1px solid #DBD3D8;
+
+  border-bottom-left-radius: 4px;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #5c7686;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  margin-bottom: 7px;
+}
+
+
+/* =========================
+   THINKING
+========================= */
+
+.thinking {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.thinking-icon {
+  color: #5c7686;
+}
+
+.thinking-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.thinking-dots span {
+  width: 5px;
+  height: 5px;
+
+  background: #9ca3af;
+
+  border-radius: 50%;
+
+  animation: thinking 1.2s infinite;
+}
+
+.thinking-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.thinking-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes thinking {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-area {
+  position: fixed;
+
+  left: 250px;
+  right: 0;
+  bottom: 0;
+
+  padding: 18px 50px 16px;
+
+  background: linear-gradient(
+    transparent,
+    #EFF1F3 25%
+  );
+}
+
+.input-container {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  background: white;
+
+  border: 1px solid #DBD3D8;
+
+  border-radius: 15px;
+
+  padding: 7px 8px 7px 16px;
+
+  display: flex;
+  align-items: center;
+
+  box-shadow: 0 8px 25px rgba(34, 56, 67, 0.08);
+}
+
+.input-container input {
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 14px;
+
+  color: #223843;
+}
+
+.input-container input::placeholder {
+  color: #9ca3af;
+}
+
+.send-button {
+  width: 36px;
+  height: 36px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #223843;
+  color: #7C90A0;
+
+  font-size: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-button:hover {
+  background: #7C90A0;
+  color: #223843;
+}
+
+.input-hint {
+  text-align: center;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+
+  margin-top: 8px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .language-panel {
+    width: 70px;
+    padding: 20px 8px;
+  }
+
+  .ai-core h2,
+  .ai-core p,
+  .section-title,
+  .language-option div span,
+  .current-mode {
+    display: none;
+  }
+
+  .core-ring {
+    width: 50px;
+    height: 50px;
+  }
+
+  .languages .language-option {
+    justify-content: center;
+  }
+
+  .language-option strong {
+    text-align: center;
+  }
+
+  .language-option {
+    justify-content: center;
+  }
+
+  .language-option.active {
+    padding: 10px 5px;
+  }
+
+  .chat-area {
+    padding: 30px 20px 130px;
+  }
+
+  .input-area {
+    left: 70px;
+    padding: 15px;
+  }
+
+  .welcome h2 {
+    font-size: 30px;
+  }
+
+  .message {
+    max-width: 88%;
+  }
+}
+
+/* =========================
+   AI CORE ANIMATION
+========================= */
+
+.core-ring {
+  animation: corePulse 3s ease-in-out infinite;
+}
+
+.core-ring::after {
+  content: "";
+
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  background: #7C90A0;
+
+  border-radius: 50%;
+
+  /* Position the dot at the top of the ring */
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  /* Orbit around the center of the ring */
+  transform-origin: 50% 37px;
+
+  box-shadow: 0 0 12px rgba(124, 144, 160, 0.8);
+
+  animation: coreOrbit 4s linear infinite;
+}
+
+.core-ring span {
+  animation: coreGlow 2.5s ease-in-out infinite;
+}
+
+
+@keyframes corePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+
+@keyframes coreGlow {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+
+@keyframes coreOrbit {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
