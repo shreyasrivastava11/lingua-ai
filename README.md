@@ -12,6 +12,12 @@ In **Auto mode**, the chatbot responds in the language used in the user's curren
 
 Users can also select a **specific language mode** when they want the assistant to respond only in a particular language.
 
+## Demo
+
+LinguaAI supports natural multilingual conversations while maintaining context across language switches.
+
+![LinguaAI Demo](./screenshot.png)
+
 ## Features
 
 - Multilingual conversational AI powered by Google Gemini API
